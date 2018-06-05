@@ -129,8 +129,8 @@ class ImageLoadOperation: AsyncOperation {
         if let imageURL = url {
             asyncImageLoad(imageURL: imageURL) { [unowned self]  image in
                 self.outputImage = image
+                self.state = .finished
             }
-            self.state = .finished
         }
     }
 }
